@@ -55,7 +55,7 @@ function render() {
     item.innerHTML = `
       <button class="todo-check" type="button" aria-label="${task.completed ? "Đánh dấu chưa hoàn thành" : "Đánh dấu hoàn thành"}"></button>
       <span class="todo-text"></span>
-      <button class="delete-button" type="button" aria-label="Xóa công việc">&times;</button>
+      <button class="delete-button" type="button" aria-label="Xóa công việc">Xóa</button>
     `;
     item.querySelector(".todo-text").textContent = task.text;
     list.appendChild(item);
