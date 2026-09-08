@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Todo App đơn giản để quản lý công việc hằng ngày">
+  <title>Todo App | Việc cần làm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="app-card" aria-labelledby="app-title">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Kế hoạch hôm nay</p>
+          <h1 id="app-title">Việc cần làm<span class="accent">.</span></h1>
+          <p class="subtitle">Tập trung vào điều quan trọng nhất, từng việc một.</p>
+        </div>
+        <div class="progress-ring" aria-label="Tiến độ hoàn thành">
+          <svg viewBox="0 0 44 44" aria-hidden="true">
+            <circle class="ring-track" cx="22" cy="22" r="18"></circle>
+            <circle class="ring-progress" cx="22" cy="22" r="18"></circle>
+          </svg>
+          <span id="progress-value">0%</span>
+        </div>
+      </header>
+
+      <form class="todo-form" id="todo-form">
+        <label class="sr-only" for="todo-input">Tên công việc mới</label>
+        <input id="todo-input" type="text" placeholder="Bạn muốn hoàn thành điều gì?" autocomplete="off" maxlength="120">
+        <button class="add-button" type="submit" aria-label="Thêm công việc">
+          <span aria-hidden="true">+</span>
+          <span>Thêm việc</span>
+        </button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filter-tabs" role="tablist" aria-label="Lọc công việc">
+          <button class="filter-tab active" type="button" data-filter="all" role="tab" aria-selected="true">Tất cả</button>
+          <button class="filter-tab" type="button" data-filter="active" role="tab" aria-selected="false">Đang làm</button>
+          <button class="filter-tab" type="button" data-filter="completed" role="tab" aria-selected="false">Đã xong</button>
+        </div>
+        <button class="clear-button" id="clear-completed" type="button">Xóa việc đã xong</button>
+      </div>
+
+      <div class="list-heading">
+        <span id="task-count">0 công việc</span>
+        <span class="list-date" id="current-date"></span>
+      </div>
+
+      <ul class="todo-list" id="todo-list" aria-live="polite"></ul>
+      <div class="empty-state" id="empty-state">
+        <div class="empty-icon" aria-hidden="true">✦</div>
+        <h2 id="empty-title">Chưa có công việc nào</h2>
+        <p id="empty-description">Thêm một việc cần làm để bắt đầu ngày mới.</p>
+      </div>
+    </section>
+    <p class="app-footer">Mỗi bước nhỏ đều tạo nên tiến bộ lớn.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
